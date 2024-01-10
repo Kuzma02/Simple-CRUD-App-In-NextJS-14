@@ -23,3 +23,11 @@ export async function editUser(id: number, userInput: string) {
   
     redirect(`/user/${id}`);
   }
+
+  export async function deleteUser(id: number){
+    await db.user.delete({
+        where: { id }
+    });
+
+    redirect("/");
+  }
