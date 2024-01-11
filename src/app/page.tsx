@@ -3,6 +3,10 @@ import { db } from "@/db";
 import Input from "@/components/Input";
 import Link from "next/link";
 
+
+// disable caching
+export const revalidate = 0;
+
 export default async function Home() {
   const users = await db.user.findMany({});
 
